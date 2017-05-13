@@ -262,5 +262,16 @@ function getHeroes1500() {
     for (let key in result.data.results) {
       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
     }
+    sortHeroes();
   })
+}
+
+function sortHeroes() {
+  superheroes.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+  var top15 = superheroes.slice(0, 15);
+  for (let i = 0; i < top15.length; i++) {
+    mostFamous.push(top15[i][0]);
+  }
 }
