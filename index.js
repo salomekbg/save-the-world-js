@@ -21,7 +21,25 @@ const PRIV_KEY = config.PRIV_KEY;
 var ts = String(Date.now());
 var hash = md5(ts + PRIV_KEY + PUBL_KEY);
 var superheroes = [];
-var mostFamous = []
+var mostFamous = [];
+var heroesCities = [];
+var cities = {
+"NYC":[40.730610, -73.935242],
+"Boston":[42.364506, -71.038887],
+"DC":[38.894207, -77.035507],
+"Chicago":[41.881832, -87.623177],
+"Indianapolis":[39.832081, -86.145454],
+"LA":[34.052235, -118.243683],
+"SF":[37.733795, -122.446747],
+"Dallas":[32.897480, -97.040443],
+"Denver":[39.742043, -104.991531],
+"Seattle":[47.608013, -122.335167],
+"New Orleans":[29.951065, -90.071533],
+"Orlando":[28.538336, -81.379234],
+"Baltimore":[39.299236, -76.609383],
+"Minneapolis":[44.986656, -93.258133],
+"Cleveland":[41.505493, -81.681290]
+};
 
 function getHeroes100() {
   $.ajax({
@@ -36,8 +54,6 @@ function getHeroes100() {
     for (let key in result.data.results) {
       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
     }
-    console.log(result.data.results)
-    debugger
   })
 }
 
@@ -263,9 +279,11 @@ function getHeroes1500() {
       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
     }
     sortHeroes();
+    sortHeroesCities();
   })
 }
 
+// sort heroes by number of comics and get the first 15 into a new array
 function sortHeroes() {
   superheroes.sort(function(a, b) {
     return b[1] - a[1];
@@ -274,4 +292,16 @@ function sortHeroes() {
   for (let i = 0; i < top15.length; i++) {
     mostFamous.push(top15[i][0]);
   }
+}
+
+function sortHeroesCities() {
+  // push each city into a nested array
+  for (var city in cities) {
+    heroesCities.push(new Array(city))
+  }
+  // push each hero into a nested array
+  for (let i = 0; i < mostFamous.length; i++) {
+    heroesCities[i].push(mostFamous[i])
+  }
+  console.log(heroesCities);
 }
