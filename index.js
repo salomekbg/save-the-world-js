@@ -330,4 +330,12 @@ var cities = {
       }
     });
   };
+
+  redisClient.georadius("cities", String(cities["Boston"][1]), String(cities["Boston"][0]), "500", "mi", "WITHDIST", function(err, reply) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(reply);
+    }
+  });
 // }
