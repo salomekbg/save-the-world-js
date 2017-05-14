@@ -321,4 +321,13 @@ var cities = {
    console.log("Error in Redis");
   });
 
+  for (var key in cities) {
+    redisClient.geoadd("cities", String(cities[key][1]), String(cities[key][0]), key, function(err, reply) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(reply);
+      }
+    });
+  };
 // }
