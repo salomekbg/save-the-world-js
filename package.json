@@ -1,0 +1,29 @@
+{
+  "name": "save-the-world-js",
+  "version": "1.0.0",
+  "description": "Save the world using the Marvel API!",
+  "main": "index.html",
+  "dependencies": {
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salomekbg/save-the-world-js.git"
+  },
+  "keywords": [
+    "marvel",
+    "api",
+    "js"
+  ],
+  "author": "Salomé K. Braganza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salomekbg/save-the-world-js/issues"
+  },
+  "homepage": "https://github.com/salomekbg/save-the-world-js#readme"
+}
