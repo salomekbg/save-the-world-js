@@ -8,3 +8,4 @@ This web app is written in JS and uses Redis to store values.
 5. Make sure that you also have a package.json file in your project directory to manage dependencies.  You can create one, by using the command, 'npm init'.
 6. To start the app, make sure that your Redis server is running in a terminal window and in another terminal window, run 'node redis.js'.
 7. Since I wanted to use Redis in a web application and not just locally, I wanted to pass information from the frontend (HTML & JS) to the backend (Node & Redis).  Thus, I used Express, middleware to deal with CORS issue and bodyParser middleware for posting information from JS to NodeJS.
+8. Open up index.html, let it load and pick a city and click the button to find the closest superheroes.
