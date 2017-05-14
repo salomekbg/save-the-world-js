@@ -1,29 +1,28 @@
-// $(document).ready(function() {
-//   getHeroes100();
-//   getHeroes200();
-//   getHeroes300();
-//   getHeroes400();
-//   getHeroes500();
-//   getHeroes600();
-//   getHeroes700();
-//   getHeroes800();
-//   getHeroes900();
-//   getHeroes1000();
-//   getHeroes1100();
-//   getHeroes1200();
-//   getHeroes1300();
-//   getHeroes1400();
-//   getHeroes1500();
-  // setRedisInfo();
-// })
+$(document).ready(function() {
+  getHeroes100();
+  getHeroes200();
+  getHeroes300();
+  getHeroes400();
+  getHeroes500();
+  getHeroes600();
+  getHeroes700();
+  getHeroes800();
+  getHeroes900();
+  getHeroes1000();
+  getHeroes1100();
+  getHeroes1200();
+  getHeroes1300();
+  getHeroes1400();
+  getHeroes1500();
+})
 
-// const PUBL_KEY = config.PUBL_KEY;
-// const PRIV_KEY = config.PRIV_KEY;
-// var ts = String(Date.now());
-// var hash = md5(ts + PRIV_KEY + PUBL_KEY);
-// var superheroes = [];
-// var mostFamous = [];
-// var heroesCities = [];
+const PUBL_KEY = config.PUBL_KEY;
+const PRIV_KEY = config.PRIV_KEY;
+var ts = String(Date.now());
+var hash = md5(ts + PRIV_KEY + PUBL_KEY);
+var superheroes = [];
+var mostFamous = [];
+var heroesCities = [];
 var cities = {
   // this is in latitude, longitude, but Redis needs longitude first
 "NYC":[40.730610, -73.935242],
@@ -43,299 +42,308 @@ var cities = {
 "Cleveland":[41.505493, -81.681290]
 };
 
-// function getHeroes100() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=0',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes200() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=100',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes300() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=200',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes400() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=300',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes500() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=400',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes600() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=500',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes700() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=600',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes800() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=700',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes900() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=800',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1000() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=900',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1100() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1000',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1200() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1100',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1300() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1200',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1400() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1300',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//   })
-// }
-//
-// function getHeroes1500() {
-//   $.ajax({
-//     method: "GET",
-//     url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1400',
-//     data: {
-//       "apikey": PUBL_KEY,
-//       "ts": ts,
-//       "hash": hash
-//     }
-//   }).done(function(result) {
-//     for (let key in result.data.results) {
-//       superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
-//     }
-//     sortHeroes();
-//     sortHeroesCities();
-//   })
-// }
-//
-// // sort heroes by number of comics and get the first 15 into a new array
-// function sortHeroes() {
-//   superheroes.sort(function(a, b) {
-//     return b[1] - a[1];
+function getHeroes100() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=0',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes200() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=100',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes300() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=200',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes400() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=300',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes500() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=400',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes600() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=500',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes700() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=600',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes800() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=700',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes900() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=800',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1000() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=900',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1100() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1000',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1200() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1100',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1300() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1200',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1400() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1300',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+  })
+}
+
+function getHeroes1500() {
+  $.ajax({
+    method: "GET",
+    url: 'https://gateway.marvel.com/v1/public/characters?orderBy=name&limit=100&offset=1400',
+    data: {
+      "apikey": PUBL_KEY,
+      "ts": ts,
+      "hash": hash
+    }
+  }).done(function(result) {
+    for (let key in result.data.results) {
+      superheroes.push(new Array(result.data.results[key].name, result.data.results[key].comics.available));
+    }
+    sortHeroes();
+    sortHeroesCities();
+    findClosestHeroesToLocation();
+  })
+}
+
+// sort heroes by number of comics and get the first 15 into a new array
+function sortHeroes() {
+  superheroes.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+  var top15 = superheroes.slice(0, 15);
+  for (let i = 0; i < top15.length; i++) {
+    mostFamous.push(top15[i][0]);
+  }
+}
+
+// get array of cities and associated heroes
+function sortHeroesCities() {
+  // push each city into a nested array
+  for (var city in cities) {
+    heroesCities.push(new Array(city))
+  }
+  // push each hero into a nested array
+  for (let i = 0; i < mostFamous.length; i++) {
+    heroesCities[i].push(mostFamous[i])
+  }
+  console.log(heroesCities);
+}
+
+// pass information from node to frontend
+// function getInfo() {
+//   $('.my_selector').click(function(){
+//     $.get('http://localhost:3000/gotdata', {}, function(data){
+//       console.log(data);
+//       $('.container').append(data);
+//     });
 //   });
-//   var top15 = superheroes.slice(0, 15);
-//   for (let i = 0; i < top15.length; i++) {
-//     mostFamous.push(top15[i][0]);
-//   }
-// }
-//
-// // get array of cities and associated heroes
-// function sortHeroesCities() {
-//   // push each city into a nested array
-//   for (var city in cities) {
-//     heroesCities.push(new Array(city))
-//   }
-//   // push each hero into a nested array
-//   for (let i = 0; i < mostFamous.length; i++) {
-//     heroesCities[i].push(mostFamous[i])
-//   }
-//   console.log(heroesCities);
 // }
 
-// function setRedisInfo() {
-  var redis = require('redis');
-  var redisClient = redis.createClient({host : 'localhost', port : 6379});
-
-  redisClient.on('ready',function() {
-    console.log("Redis is ready");
-  });
-
-  redisClient.on('error',function() {
-   console.log("Error in Redis");
-  });
-
-  for (var key in cities) {
-    redisClient.geoadd("cities", String(cities[key][1]), String(cities[key][0]), key, function(err, reply) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(reply);
+function findClosestHeroesToLocation() {
+  $('.find_heroes').click(function() {
+    var location = $('select').val();
+    $.post('http://localhost:3000/findclosesthero', {location: location}, function(data){
+      if (data === "done") {
+        getClosestHeroesToLocation();
       }
-    });
-  };
+    })
+  })
+}
 
-  redisClient.georadius("cities", String(cities["Boston"][1]), String(cities["Boston"][0]), "500", "mi", "WITHDIST", function(err, reply) {
-    if (err) {
-      console.log(err);
+function getClosestHeroesToLocation() {
+  $.get('http://localhost:3000/getclosesthero', {}, function(data){
+    if (data.length === 0) {
+      $('.answer')[0].innerText = "There is no superhero within 500 miles of your city!  You are on your own."
     } else {
-      console.log(reply);
+      $('.answer')[0].innerText = ""
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < heroesCities.length; j++) {
+          if (heroesCities[j][0] === data[i][0]) {
+            $ ('.answer').append(`<li>${heroesCities[j][1]}</li>`);
+          }
+        }
+      }
+      $('.answer').append(`<br /><br /><br />Data provided by Marvel. © 2014 Marvel`);
     }
   });
-// }
+}

@@ -4,12 +4,14 @@
   "description": "Save the world using the Marvel API!",
   "main": "index.html",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
     "redis": "^2.7.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node redis.js"
   },
   "repository": {
     "type": "git",
