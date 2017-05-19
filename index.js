@@ -267,6 +267,7 @@ function sortHeroesCities() {
     heroesCities[i].push(mostFamous[i])
   }
   console.log(heroesCities);
+  $('.answer')[0].innerText  = "The app is now ready!  Please choose a city and click the button.";
 }
 
 function findClosestHeroesToLocation() {
