@@ -1,0 +1,12 @@
+.wait {
+  background-color: red;
+  padding: 20px;
+  width: 500px;
+}
+
+.ready {
+  background-color: lime;
+  padding: 20px;
+  width: 500px;
+  display: none;
+}

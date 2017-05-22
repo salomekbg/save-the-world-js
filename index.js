@@ -1,5 +1,6 @@
 $(document).ready(function() {
   getHeroes();
+  $('.ready').hide();
 })
 
 const PUBL_KEY = config.PUBL_KEY;
@@ -267,7 +268,9 @@ function sortHeroesCities() {
     heroesCities[i].push(mostFamous[i])
   }
   console.log(heroesCities);
-  $('.answer')[0].innerText  = "The app is now ready!  Please choose a city and click the button.";
+  $('.wait').hide();
+  $('.ready').show();
+  $('.ready')[0].innerText  = "The app is now ready!  Please choose a city and click the button.";
 }
 
 function findClosestHeroesToLocation() {
@@ -284,9 +287,11 @@ function findClosestHeroesToLocation() {
 function getClosestHeroesToLocation() {
   $.get('http://localhost:3000/getclosesthero', {}, function(data){
     if (data.length === 0) {
+      $('.wait').hide();
       $('.answer')[0].innerText = "There is no superhero within 500 miles of your city!  You are on your own."
     } else {
-      $('.answer')[0].innerText = ""
+      $('.wait').hide();
+      $('.answer')[0].innerText = "";
       for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < heroesCities.length; j++) {
           if (heroesCities[j][0] === data[i][0]) {
