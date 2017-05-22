@@ -1,6 +1,5 @@
 $(document).ready(function() {
   getHeroes();
-  $('.ready').hide();
 })
 
 const PUBL_KEY = config.PUBL_KEY;
@@ -287,10 +286,12 @@ function findClosestHeroesToLocation() {
 function getClosestHeroesToLocation() {
   $.get('http://localhost:3000/getclosesthero', {}, function(data){
     if (data.length === 0) {
-      $('.wait').hide();
+      $('.ready').hide();
+      $('.answer').show();
       $('.answer')[0].innerText = "There is no superhero within 500 miles of your city!  You are on your own."
     } else {
-      $('.wait').hide();
+      $('.ready').hide();
+      $('.answer').show();
       $('.answer')[0].innerText = "";
       for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < heroesCities.length; j++) {
@@ -299,7 +300,7 @@ function getClosestHeroesToLocation() {
           }
         }
       }
-      $('.answer').append(`<br /><br /><br />Data provided by Marvel. © 2014 Marvel`);
+      $('.answer').append(`<br /><br /><h6>Data provided by Marvel. © 2014 Marvel</h6>`);
     }
   });
 }

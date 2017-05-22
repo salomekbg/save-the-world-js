@@ -1,12 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Barrio');
+
+body {
+  font-family: 'Bangers', cursive;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: lightblue;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 4em;
+}
+
+h3 {
+  margin-top: -40px;
+  font-size: .75em;
+  font-family: Arial;
+}
+
+.wait, .ready {
+  font-family: 'Barrio', cursive;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  width: 800px;
+  text-align: center;
+  border: 3px dotted black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
 .wait {
   background-color: red;
-  padding: 20px;
-  width: 500px;
 }
 
 .ready {
   background-color: lime;
-  padding: 20px;
-  width: 500px;
   display: none;
+}
+
+li {
+  list-style: none;
+}
+
+select {
+  border: 1px solid black;
+  background: orange;
+  font-family: 'Bangers', cursive;
+  font-size: 1em;
+  letter-spacing: .075em;
+}
+
+input[type=button] {
+  background: blue;
+  color: white;
+  letter-spacing: .075em;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Bangers', cursive;
+  font-size: 1em;
+}
+
+input[type=button]:hover {
+  background: white;
+  color: blue;
+}
+
+.answer {
+  margin-top: -20px;
+  width: 100%;
+  margin: auto;
+  display: none;
+  background-color: white;
+  border: 3px solid black;
+  width: 500px;
+  padding: 20px 0 20px 0;
+  margin-bottom: 10px;
 }
