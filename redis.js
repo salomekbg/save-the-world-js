@@ -75,7 +75,7 @@ for (var key in cities) {
   });
 };
 
-// find cities closets to Boston specifically
+// find cities closest to Boston specifically
 redisClient.georadius("cities", String(cities["Boston"][1]), String(cities["Boston"][0]), "500", "mi", "WITHDIST", function(err, reply) {
   if (err) {
     console.log(err);
